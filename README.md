@@ -1,2 +1,2 @@
-# alx-low_level_programming
-c- programming
+my project in c
+
