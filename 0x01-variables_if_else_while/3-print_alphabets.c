@@ -10,16 +10,21 @@
 
 int main(void)
 {
-	/*prints in smalll letters*/
-	for (char ch = 'a'; ch<= 'z'; ch++)
-    	{
-		putchar(ch);
-	}
+	char ch = 'a';
+	char cH = 'A';
 
-	/*prints in caps*/
-	for (char ch = 'A'; ch <= 'Z'; ch++)
+	/*prints a - z*/
+	while (ch <= 'z')
 	{
 		putchar(ch);
+		++ch;
+	}
+
+	/*print A - Z*/
+	while (cH <= 'Z')
+	{
+		putchar(cH);
+		++cH;
 	}
 	putchar('\n');
 	
