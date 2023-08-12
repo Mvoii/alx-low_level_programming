@@ -2,14 +2,18 @@
 
 int main(void)
 {
-  for (char ch = 'a'; ch<= 'z'; ch++)
-    {
-      putchar(ch);
-    }
-  for (char ch = 'A'; ch <= 'Z'; ch++)
-    {
-      putchar(ch);
-    }
-  putchar('\n');
-  return (0);
+	/*prints in smalll letters*/
+	for (char ch = 'a'; ch<= 'z'; ch++)
+    	{
+			putchar(ch);
+		}
+
+	/*prints in caps*/
+	for (char ch = 'A'; ch <= 'Z'; ch++)
+		{
+			putchar(ch);
+		}
+	putchar('\n');
+	
+	return (0);
 }
