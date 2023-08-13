@@ -18,6 +18,6 @@ int main(void)
 		++digit;
 	}
 	prinf("\n");
-	
+
 	return (0);
 }
