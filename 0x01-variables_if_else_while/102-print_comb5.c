@@ -13,7 +13,7 @@ int main(void)
 
 	while (firstDigit <= 99)
 	{
-		secDigit = first Digit;
+		secDigit = firstDigit;
 		while (secDigit <= 99)
 		{
 			if (secDigit != firstDigit)
@@ -21,16 +21,16 @@ int main(void)
 				putchar((firstDigit / 10) + 48);
 				putchar((firstDigit % 10) + 48);
 				putchar(' ');
-				putchar((seconDigit / 10) + 48);
-				putchar((seconDigit % 10) + 48);
+				putchar((secDigit / 10) + 48);
+				putchar((secDigit % 10) + 48);
 
-				if (firstDigit != 98 || seconDigit != 99)
+				if (firstDigit != 98 || secDigit != 99)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
-			++seconDigit;
+			++secDigit;
 		}
 		++firstDigit;
 	}
