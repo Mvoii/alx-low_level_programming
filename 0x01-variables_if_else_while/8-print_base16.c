@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	int digit = 14; /*decimal rep of 0*/
+	int digit = 48; /*decimal rep of 0*/
 
 	while (digit <= 102) /*102 is decimal rep of f*/
 	{
