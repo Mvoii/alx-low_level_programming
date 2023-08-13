@@ -1,7 +1,27 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Description: print numbers of base16 in lowercase
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(void)
 {
-  return (0);
+	int digit = 14; /*decimal rep of 0*/
+
+	while (digit <= 102) /*102 is decimal rep of f*/
+	{
+		putchar(digit);
+
+		/*after 9, jump to 96 */
+		if (digit == 57)
+			digit += 39;
+		++digit;
+	}
+	putchar('\n');
+
+	return (0);
 }
