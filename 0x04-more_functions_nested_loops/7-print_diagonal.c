@@ -15,10 +15,12 @@ void print_diagonal(int n)
 		_putchar('\n');
 	else
 	{
-		for (num = 0; num < n; num++)
+		for (num = 1; num <= n; num++)
 		{
-			for (spaces = 0; spaces <= num; spaces++)
-				_putchar(32); /*ascii value of blank space*/
+			for (spaces = 1; spaces <= num; spaces++)
+			{
+				_putchar(' '); /*ascii value of blank space*/
+			}
 			_putchar(92); /*ascii value of slash*/
 			_putchar('\n');
 		}
