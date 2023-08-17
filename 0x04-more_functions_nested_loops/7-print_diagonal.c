@@ -9,19 +9,17 @@
 
 void print_diagonal(int n)
 {
-	int num, spaces;
+	int num, space;
 
 	if (n <= 0)
 		_putchar('\n');
 	else
 	{
-		for (num = 1; num <= n; num++)
+		for (num = 1; num <= n; ++num)
 		{
-			for (spaces = 1; spaces <= num; spaces++)
-			{
-				_putchar(' '); /*ascii value of blank space*/
-			}
-			_putchar(92); /*ascii value of slash*/
+			for (space = 1; space <= num; ++space)
+				_putchar(' ');
+			_putchar(92); /*is equal to '/' char*/
 			_putchar('\n');
 		}
 	}
