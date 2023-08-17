@@ -20,7 +20,7 @@ void print_diagonal(int n)
 			for (spaces = 0; sapces <= num; spaces++)
 				_putchar(32); /*ascii value of blank space*/
 			_putchar(92); /*ascii value of slash*/
-			_putchar("\n');
+			_putchar('\n');
 		}
 	}
 }
