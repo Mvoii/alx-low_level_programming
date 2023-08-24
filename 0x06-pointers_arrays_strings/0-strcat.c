@@ -12,23 +12,22 @@
 
 char *_strcat(char *dest, char *src)
 {
-    int len1, len2;
+	int i;
+	int j;
 
-    len1 = 0;
-
-    len2 = 0;
-
-    /* find length of string dest*/
-    while (dest[len1])
-        len1++;
-
-	/*create a for loop that appends the src string elements to dest*/
-	for (len2; src[len2]; len2++)
-	{	
-        dest[len1++] = src[len2];
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
 	}
-	dest[len] = '\0';
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
 
-	/*returns dest*/
+	dest[i] = '\0';
 	return (dest);
 }
