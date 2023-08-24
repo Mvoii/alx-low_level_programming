@@ -12,20 +12,20 @@
 
 char *_strcat(char *dest, char *src)
 {
-    int len1 = 0, len2 = 0;
+    int len1, len2;
+
+    len1 = 0;
+
+    len2 = 0;
 
     /* find length of string dest*/
-    while (dest[len1] != '\0')
+    while (dest[len1])
     {
         len1++;
     }
-    /*find length of string src*/
-    while (src[len2] != '\0')
-    {
-        len2++;
-    }
-    /*create a for loop that appends the src string eleents to dest*/
-    for (int i = 0; i <= len2; i++)
+
+    /*create a for loop that appends the src string elements to dest*/
+    for (len2; src[len2]; len2++)
     {
         dest[len1++] = src[i];
     }
