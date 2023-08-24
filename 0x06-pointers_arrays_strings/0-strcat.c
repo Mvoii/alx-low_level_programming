@@ -27,7 +27,7 @@ char *_strcat(char *dest, char *src)
     /*create a for loop that appends the src string elements to dest*/
     for (len2; src[len2]; len2++)
     {
-        dest[len1++] = src[i];
+        dest[len1++] = src[len2];
     }
 
     /*returns dest*/
