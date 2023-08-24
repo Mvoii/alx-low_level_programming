@@ -12,5 +12,6 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *);
 char *leet(char *n);
 char *cap_string(char *);
+char *string_toupper(char *n);
 
 #endif /*MAIN_H*/
