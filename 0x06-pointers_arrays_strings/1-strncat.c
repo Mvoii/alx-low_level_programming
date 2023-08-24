@@ -12,19 +12,20 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-    int len1 = 0;
-    int len2;
+	int len1 = 0;
 
-    /*find length of string dst*/
-    while (dest[len1])
-        len1++;
+	int len2;
 
-    /*for loop to append characters*/
-    for (len2 = 0; len2 < n && src[len2] != '\0'; len2++)
-        dest[len1 + len2] = src[len2];
+	/*find length of string dst*/
+	while (dest[len1])
+		len1++;
 
-    /*add null character at end*/
-    dest[len1 + len2] = '\0';
+	/*for loop to append characters*/
+	for (len2 = 0; len2 < n && src[len2] != '\0'; len2++)
+		dest[len1 + len2] = src[len2];
 
-    return (dest);
+	/*add null character at end*/
+	dest[len1 + len2] = '\0';
+
+	return (dest);
 }
