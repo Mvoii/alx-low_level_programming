@@ -1,8 +1,8 @@
-#include "main.h"
-/*
- * sets the memory address to a given address
- * returns (0)
+/**
+ * fills the memory address wit const byte
+ * returns a pointer to the filled mem
 */
+
 char *_memset(char *s, char b, unsigned int n)
 {
     int i;
