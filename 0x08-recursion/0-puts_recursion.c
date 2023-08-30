@@ -6,6 +6,7 @@
  */
 void _puts_recursion(char *s)
 {
+	/*code description*/
 	if (*s != '\0')
 	{
 		_putchar(*s);
