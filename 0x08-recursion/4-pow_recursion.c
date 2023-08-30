@@ -7,17 +7,17 @@
  * Return: result of the power
  */
 int _pow_recursion(int x, int y)
- {
+{
 	if (y == 0)
 	{
 		return (1); /* x^0 is 1*/
 	}
 	else if (y < 0)
 	{
-		return (-1); /* Handling negative exponents*/
-    }
+		return (-1);/* Handling negative exponents*/
+	}
 	else
-	{	
-        return (x * _pow_recursion(x, y - 1)); /* Recursive case*/
-    }
+	{
+		return (x * _pow_recursion(x, y - 1));/* Recursive case*/
+	}
 }
