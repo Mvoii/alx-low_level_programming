@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 /**
  * check_num - check - string there are digit
  * @str: array str
