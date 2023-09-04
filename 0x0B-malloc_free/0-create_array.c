@@ -9,9 +9,12 @@ char *create_array(unsigned int size, char c)
 
 	char *arr = malloc(sizeof(char) * size);
 
-	for (int i = 0; i < size; i++)
+	int i = 0;
+
+	while (i < size)
 	{
 		arr[i] = c;
+		i++;
 	}
 	return (arr);
 }
