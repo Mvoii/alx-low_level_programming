@@ -15,18 +15,18 @@
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
-	char *arr;
+	char *a;
 
 	if (size == 0)
 		return (NULL);
 
-	arr = malloc(sizeof(char) * size);
+	a = malloc(sizeof(char) * size);
 
-	if (arr == NULL)
+	if (a == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
 		a[i] = c;
 
-	return (arr);
+	return (a);
 }
