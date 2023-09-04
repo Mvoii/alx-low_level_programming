@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * wordcount - get word count from string
+ * wordcounter - get word count from string
  *             without spaces
  *
  * @str: string to count words present
@@ -89,7 +89,6 @@ char **strtow(char *str)
 			if (str[word] != ' ' && (str[word + 1] == ' ' || str[word + 1] == '\0'))
 			{
 				string[i] = malloc((word - s + 2) * sizeof(char));
-
 				if (string[i] == NULL)
 				{
 					free_array(string, i);
@@ -98,14 +97,10 @@ char **strtow(char *str)
 				break;
 			}
 		}
-
 		for (j = 0; s <= word; s++, j++)
 			string[i][j] = str[s];
-
 		string[i][j] = '\0';
 	}
-
 	string[i] = NULL;
-
 	return (string);
 }
