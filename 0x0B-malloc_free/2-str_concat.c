@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 		len2++;
 
 	/*+1 for our end of string character*/
-	s = malloc((len1 * sizeof(char)) + ((len + 1) * sizeof(char)));
+	s = malloc((len1 * sizeof(char)) + ((len2 + 1) * sizeof(char)));
 
 	if (s == NULL)
 		return (NULL);
