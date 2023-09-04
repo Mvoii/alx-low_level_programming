@@ -7,9 +7,14 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 
-	char *arr = malloc(sizeof(char) * size);
+	char *arr;
 
-	int i = 0;
+	arr = malloc(sizeof(char) * size);
+
+	if (arr == NULL)
+		return (NULL);
+
+	unsigned int i = 0;
 
 	while (i < size)
 	{
