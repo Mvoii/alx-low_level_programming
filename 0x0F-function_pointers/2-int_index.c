@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * int_index - return index place if comparison = true, else -1
- * @array: size of elements in the array
+ * @array: the array
  * @size: size of elements in array
  * @cmp: pointer to a function in main
  * Return: 0
