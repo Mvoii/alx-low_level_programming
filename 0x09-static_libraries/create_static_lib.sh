@@ -4,6 +4,6 @@
 # called liball.a from all the .c files
 # that are in the current directory
 
-gcc -c *.c
-ar rc liball.a *.c
-echo y | rm -I *.o
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c *.c
+ar rc liball.a *.o
+
