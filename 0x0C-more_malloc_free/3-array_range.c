@@ -1,44 +1,27 @@
 #include "main.h"
 
 /**
- * string_nconcat - concatenates two strings
- * @s1: destination string
- * @s2: source string
- * @n: number of characters to be copied
- * Return: copied
+ * array_range -  an array of integers
+ * @min: minimum value in array
+ * @max: maaximum value in array
+ * Return: integer array
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+int *array_range(int min, int max)
 {
-	unsigned int s1_len = 0, s2_len = 0, i;
-	char *s;
+	int i, size = (max - min) + 1;
+	int *p;
 
-	/* if NULL is passed, treat as an empty string */
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	/* While at index 0 */
-	while (s1[s1_len] != '\0')
-		s1_len++;
-	while (s2[s2_len] != '\0')
-		s2_len++;
-
-	if (n >= s2_len)
-		n = s2_len;
-
-	/* Memory allocation */
-	s = malloc(sizeof(char) * n + s1_len + 1);
-	if (s == NULL)
+	if (min > max)
 		return (NULL);
 
-	for (i = 0; i < s1_len; i++)
-		s[i] = s1[i];
+	p = (int *) malloc(sizeof(int) * size);
+	if (p == NULL)
+		return (NULL);
 
-	for (i = 0; i < n; i++)
-		s[i + s1_len] = s2[i];
-
-	s[i + s1_len] = '\0';
-
-	return (s);
+	for (i = 0; i < size; i++)
+	{
+		p[i] = min;
+		min++;
+	}
+	return (p);
 }
