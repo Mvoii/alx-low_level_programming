@@ -12,7 +12,7 @@
  * Return: empty if @array and @action is NULL
 *//
 
-void array_iterator(int *array, size_t_size, void (*action)(int))
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int index;
 
