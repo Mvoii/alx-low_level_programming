@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_list - prints outthe contents of the lists
+ * print_list - prints out the contents of the lists
  *
  * Description: long description
  *
