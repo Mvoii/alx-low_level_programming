@@ -6,30 +6,18 @@
 */ 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int chars_to_print;
-	ssize_t printed_chars;
-	FILE *fileName
+	char *buf;
+	ssize_t fd;
+	ssize_t w;
+	ssize_t t;
 
-	if (filename == NULL)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 		return (0);
-
-	fileName = fopen(filename, "r");
-
-	if (fileName == NULL)
-		return(0);
-
-	chars_to_print = fgetc(fileName);
-
-	while (printed_chars <= letters)
-	{
-		if (printed_chars == letters || chars_to_print == -1)
-			break;
-		if (write(STDOUT_FILENO, &chars_to_print, 1) == -1)
-			return (0);
-		printed_chars++;
-		chars_to_print = fgetc(fileName);
-	}
-
-	fclose(fileName);
-	return (printed_chars);
+	buf = malloc(sizeof(char) * letters);
+	t = read(fd, buf, letters);
+	w = write(STDOUT_FILENO, buf, t);
+	free(buf);
+	close(fd);
+	return (w);
 }
