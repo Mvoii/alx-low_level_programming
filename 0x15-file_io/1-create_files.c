@@ -12,21 +12,22 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int ptr;
+	int fd, w, len = 0;
 
 	if (filename == NULL)
 		return (-1);
-	ptr = open(filename, 0_CREAT | 0_WRONLY | 0_TRUNC, 0000);
-	if (ptr == -1)
+
+	if (text_content != NULL)
 	{
-		return (-1);
+		for (len = 0; text_content[len];)
+			len++;
 	}
-	if (text_content == NULL)
-	{
-		text_content = "";
-	}
-	if (write(ptr, text_content, strlen(text_content)) == (ssize_t) - 1)
+	fd = open(filename, 0_CREAT | 0_RDWR | 0-TRUNC, 0000);
+	w = write(fd, text_content, len);
+
+	if (fd == -1 || w == -1)
 		return (-1);
-	close(ptr);
+
+	close(fd);
 	return (1);
 }
