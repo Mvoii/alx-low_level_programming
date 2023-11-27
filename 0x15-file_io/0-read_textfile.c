@@ -1,42 +1,35 @@
 #include "main.h"
-
 /**
  * @filename - name of file to be read
  * @letters - number of letters to be printed
  * Return: number of letters to be printed
 */ 
-
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buff;
-	int fd;
-	ssize_t written, readfile;
+	int chars_to_print;
+	ssize_t printed_chars;
+	FILE *fileName
 
 	if (filename == NULL)
 		return (0);
 
-	buff = malloc(sizeof(char) * letters);
+	fileName = fopen(filename, "r");
 
-	if (buff == NULL)
-		return (0);
+	if (fileName == NULL)
+		return(0);
 
-	fd = open(filename, O_RDONLY);
+	chars_to_print = fgetc(fileName);
 
-	readfile = read(fd, buff, letters);
-
-	written = write(STDOUT_FILENO, buff, readfile);
-
-	if (fd == -1 || readfile == -1 || written == -1 || written != readfile)
+	while (printed_chars <= letters)
 	{
-		free(buff);
-		close(fd);
-		return (0);
+		if (printed_chars == letters || chars_to_print == -1)
+			break;
+		if (write(STDOUT_FILENO, &chars_to_print, 1) == -1)
+			return (0);
+		printed_chars++;
+		chars_to_print = fgetc(fileName);
 	}
 
-	free(buff);
-
-	close(fd);
-
-	return (written);
+	fclose(fileName);
+	return (printed_chars);
 }
