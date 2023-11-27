@@ -2,11 +2,8 @@
 
 /**
  * @filename - name of file to be read
- *
  * @letters - number of letters to be printed
- *
  * Return: number of letters to be printed
- *
 */ 
 
 
@@ -28,9 +25,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	readfile = read(fd, buff, letters);
 
-	written = write(STDOUT_FILENO, buff, letters);
+	written = write(STDOUT_FILENO, buff, readfile);
 
-	if (fd == -1 || readfile == -1 || written != readfile)
+	if (fd == -1 || readfile == -1 || written == -1 || written != readfile)
 	{
 		free(buff);
 		close(fd);
