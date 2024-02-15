@@ -6,18 +6,40 @@
 */ 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buf;
-	ssize_t fd;
-	ssize_t w;
-	ssize_t t;
+	int fd, length, i, result;
+	char *buffer;
 
+	/*check if the parameter is NULL*/
+	if (filename == NULL)
+		return (0);
+
+	/*open the file in read only mode*/
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-	buf = malloc(sizeof(char) * letters);
-	t = read(fd, buf, letters);
-	w = write(STDOUT_FILENO, buf, t);
-	free(buf);
-	close(fd);
-	return (w);
+
+	/*allocate a buffer of size letters*/
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
+
+	/*read and add a null terminator*/
+	read(fd, buffer, letters);
+	buffer[letters] = '\0';
+
+	for (i = 0; buffer[i] != '\0'; i++)
+		length += 1;
+
+	result = close(fd);
+	if (result != 0)
+		exit(-1);
+
+	/*write contents of buffer to STDOUT*/
+	result = write(STDOUT_FILENO, buffer, length);
+	if (result != length)
+		return (0);
+
+	free(buffer);
+
+	return (length);
 }
